@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+    </head>
+    <body>
+        
+        <h1>Fitness app</h1>
+        <ul>
+            <% brands.forEach((brand) => { %>
+                <li><a href=""><%= brand.brand %></a></li>
+            <%}) %>
+        </ul>
+    </body>
+</html>
