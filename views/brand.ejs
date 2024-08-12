@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h2>
+            <%= brand.brand %>
+        </h2>
+        <ul>
+            <% products.forEach((product, index) => { %>
+                <li><a href="/brands/<%= brandid %>/products/<%= index %>"><%= product.product %></a></li>
+            <% }) %>
+        </ul>
+
+        <a href="<%= brandid %>/products">Add product</a>
+
+        <a href="/">Back</a>
+    </body>
+</html>

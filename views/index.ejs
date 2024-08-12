@@ -8,9 +8,10 @@
         
         <h1>Fitness app</h1>
         <ul>
-            <% brands.forEach((brand) => { %>
-                <li><a href=""><%= brand.brand %></a></li>
+            <% brands.forEach((brand, index) => { %>
+                <li><a href="/brands/<%= index %>"><%= brand.brand %></a></li>
             <%}) %>
         </ul>
+        <a href="/brands">Add a Brand</a>
     </body>
 </html>
