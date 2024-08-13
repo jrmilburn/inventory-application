@@ -3,21 +3,80 @@
         <title>
             <%= title %>
         </title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                margin: 0 0 0 8rem;
+            }
+
+            .content {
+                width: 60%;
+                border: 1px solid #ccc;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+                padding: 1rem;
+                border-radius: 0.5rem;
+                position: relative;
+            }
+
+            a {
+
+                text-decoration: none;
+                color: black;
+                transition: opacity 0.3s;
+
+            }
+
+            a:hover {
+
+                opacity: 0.6;
+
+            }
+
+            .footer {
+                width: 60%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5rem;
+            }
+
+            .ud {
+                display:flex;
+                gap: 1rem;
+            }
+
+            .brand {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: rgba(0, 0, 0, 0.5);
+                transform: translate(-25%, 25%);
+            }
+        </style>
     </head>
     <body>
-        
-        <h2>
-            <%= product.product %>
-            <%= brand.brand %>
-        </h2>
-        <h3>
-            <%= product.price %>
-        </h3>
-        <p>
-            <%= product.description %>
-        </p>
-        <a href="/brands/<%= brandid %>/products/<%= productid %>/edit">Edit</a> <a href="/brands/<%= brandid %>/products/<%= productid %>/delete">Delete</a>
-        <a href="/brands/<%= brandid %>">Back</a>
+        <h1>Joe's Fitness Supps</h1>
+        <div class="content">
+            <h2>
+                <%= product.product %>
+            </h2>
+            <h3>
+                <%= product.price %>
+            </h3>
+            <p>
+                <%= product.description %>
+            </p>
+            <div class="brand">
+                <%= brand.brand %>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="/brands/<%= brandid %>">Back</a>
+            <div class="ud"><a href="/brands/<%= brandid %>/products/<%= productid %>/edit">Edit</a> <a href="/brands/<%= brandid %>/products/<%= productid %>/delete">Delete</a></div>
+            
+        </div>
 
 
     </body>

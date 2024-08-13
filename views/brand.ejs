@@ -1,19 +1,81 @@
 <html>
     <head>
         <title><%= title %></title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                margin: 0 0 0 8rem;
+            }
+
+            ul {
+                list-style: none;
+                width: 60%;
+                border: 1px solid #ccc;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+                padding: 1rem;
+                border-radius: 0.5rem;
+                position: relative;
+            }
+
+            li {
+
+                display: flex;
+                justify-content: space-between;
+                gap: 0.5rem;
+                border-bottom: 1px solid #ccc;
+                padding: 0.5rem;
+
+
+            }
+
+            a {
+
+                text-decoration: none;
+                color: black;
+                transition: opacity 0.3s;
+
+            }
+
+            a:hover {
+
+                opacity: 0.6;
+
+            }
+
+            .footer {
+                width: 60%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .brand {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: rgba(0, 0, 0, 0.5);
+                transform: translate(-25%, 25%);
+            }
+        </style>
     </head>
     <body>
-        <h2>
-            <%= brand.brand %>
-        </h2>
+        <h1>Joe's Fitness Supps</h1>
         <ul>
             <% products.forEach((product, index) => { %>
                 <li><a href="/brands/<%= brandid %>/products/<%= index %>"><%= product.product %></a> </li>
             <% }) %>
+            <div class="brand">
+                <%= brand.brand %>
+            </div>
         </ul>
 
-        <a href="<%= brandid %>/products">Add product</a>
+        
 
-        <a href="/">Back</a>
+        <div class="footer">
+            <a href="<%= brandid %>/products">Add product</a>
+            <a href="/">Back</a>
+        </div>
     </body>
 </html>

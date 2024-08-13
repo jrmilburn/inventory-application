@@ -3,13 +3,61 @@
         <title>
             <%= title %>
         </title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                margin: 0 0 0 8rem;
+            }
+
+            ul {
+                list-style: none;
+                width: 60%;
+                border: 1px solid #ccc;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            li {
+
+                display: flex;
+                justify-content: space-between;
+                gap: 0.5rem;
+                border-bottom: 1px solid #ccc;
+                padding: 0.5rem;
+
+
+            }
+
+            .ud {
+                display:flex;
+                gap: 1rem;
+            }
+
+            a {
+
+                text-decoration: none;
+                color: black;
+                transition: opacity 0.3s;
+
+            }
+
+            a:hover {
+
+                opacity: 0.6;
+
+            }
+        </style>
     </head>
     <body>
         
-        <h1>Fitness app</h1>
+        <h1>Joe's Fitness Supps</h1>
         <ul>
             <% brands.forEach((brand, index) => { %>
-                <li><a href="/brands/<%= index %>"><%= brand.brand %></a> <a href="/brands/<%= index %>/edit">Edit</a><a href="/brands/<%= index %>/delete">Delete</a></li>
+                <li><a href="/brands/<%= index %>"><%= brand.brand %></a> <div class="ud"><a href="/brands/<%= index %>/edit">Edit</a><a href="/brands/<%= index %>/delete">Delete</a></div></li>
 
             <%}) %>
         </ul>
