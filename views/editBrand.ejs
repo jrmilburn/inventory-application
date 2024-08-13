@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title> <%= title %></title>
+    </head>
+    <body>
+        <form action="edit" method="POST">
+
+            <label for="brand">Edit Brand Name</label>
+            <input type="text" name="brand" id="brand" value="<%= brand.brand %>">
+            <button type="submit">Confirm</button>
+
+        </form>
+
+        <a href="/">Back to Brands</a>
+    </body>
+</html>

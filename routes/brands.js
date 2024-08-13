@@ -4,6 +4,11 @@ const productsRouter = require("./products");
 const brandsController = require("../controllers/brandController");
 
 brandsRouter.get("/:id", brandsController.brandGet);
+brandsRouter.get("/:id/edit", brandsController.brandEditGet);
+brandsRouter.post("/:id/edit", brandsController.brandEditPost);
+
+brandsRouter.get("/:id/delete", brandsController.brandDeleteGet);
+
 
 brandsRouter.get("/", (req, res) => {
     res.render('createBrand');

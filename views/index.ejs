@@ -9,7 +9,8 @@
         <h1>Fitness app</h1>
         <ul>
             <% brands.forEach((brand, index) => { %>
-                <li><a href="/brands/<%= index %>"><%= brand.brand %></a></li>
+                <li><a href="/brands/<%= index %>"><%= brand.brand %></a> <a href="/brands/<%= index %>/edit">Edit</a><a href="/brands/<%= index %>/delete">Delete</a></li>
+
             <%}) %>
         </ul>
         <a href="/brands">Add a Brand</a>

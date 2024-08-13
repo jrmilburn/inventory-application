@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title> <%= title %></title>
+    </head>
+    <body>
+
+        <form action="edit" method="POST">
+
+            <label for="product">Edit Product Name</label>
+            <input type="text" name="product" id="product" value="<%= product.product %>">
+
+            <label for="price">Price</label>
+            <input type="text" name="price" id="price" value="<%= product.price %>">
+
+            <label for="description">Description</label>
+            <textarea name="description" id="description"><%= product.description %></textarea>
+
+            <button type="submit">Confirm</button>
+
+        </form>
+
+        <a href="/brands/<%= brandid %>/products/<%= productid %>">Back to Product</a>
+    </body>
+</html>
