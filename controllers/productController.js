@@ -90,10 +90,23 @@ async function productEditPost(req, res) {
 
 }
 
+async function productDeleteGet(req, res) {
+
+    const brands = await db.getBrands();
+    const brand = brands[+req.params.id];
+    const products = await db.getProducts(brand);
+    const product = products[req.params.productid];
+    await db.deleteProduct(product);
+
+    res.redirect(`/brands/${req.params.id}`);
+
+}
+
 module.exports = {
     productGet,
     productCreateGet,
     productCreatePost,
     productEditGet,
-    productEditPost
+    productEditPost,
+    productDeleteGet
 };

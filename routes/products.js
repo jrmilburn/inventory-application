@@ -10,4 +10,6 @@ productsRouter.post("/", productController.productCreatePost)
 productsRouter.get("/:productid/edit", productController.productEditGet);
 productsRouter.post("/:productid/edit", productController.productEditPost);
 
+productsRouter.get("/:productid/delete", productController.productDeleteGet);
+
 module.exports = productsRouter;
