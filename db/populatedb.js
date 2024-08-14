@@ -1,5 +1,9 @@
 const { Client } = require("pg");
 
+require('dotenv').config();
+
+const { HOST, USER_REMOTE, DATABASE, PASSWORD, DB_PORT } = process.env;
+
 const creatineDesc = 'One of the most researched supplements this Micronized Creatine Powder contains 5g of pure creatine monohydrate per serving. This superpower supplement supports muscle building recovery endurance, strength, and performance. It has no fillers or additives and it’s unflavoured.';
 
 const brandSQL = `
@@ -35,7 +39,7 @@ const productSQL = `
 async function main() {
     console.log('seeding...');
     const client = new Client({
-        connectionString: "postgresql://jrmilburn:password@localhost:5432/fitness_app",
+        connectionString: `postgresql://${USER_REMOTE}:${PASSWORD}@${HOST}:${DB_PORT}/${DATABASE}`,
     });
     await client.connect();
     await client.query(brandSQL);
