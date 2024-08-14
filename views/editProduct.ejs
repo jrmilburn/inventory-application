@@ -1,24 +1,123 @@
 <html>
     <head>
         <title> <%= title %></title>
+        <style>
+                    body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 0 8rem;
+        }
+
+        form {
+
+            width: 60%;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+        }
+
+        form button {
+
+            width: 8rem;
+            padding: 0.5rem 2rem;
+            border: 1px solid black;
+            background: none;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s;
+
+        }
+
+        form button:hover {
+
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.2);
+
+        }
+
+        form input {
+
+            width: 12rem;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+
+        }
+
+        form input:active {
+
+            border: 1px solid #ccc;
+
+        }
+
+        .product {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: rgba(0, 0, 0, 0.5);
+                transform: translate(0%, -100%);
+        }
+
+        .field {
+
+            width: 80%;
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+
+        }
+
+        .footer {
+            width: 60%;
+            display: flex;
+
+        }
+
+        a {
+
+            text-decoration: none;
+            color: black;
+            transition: opacity 0.3s;
+
+        }
+
+        a:hover {
+            
+            opacity: 0.6;
+            
+        }
+        </style>
     </head>
     <body>
         <h1>Joe's Fitness Supps</h1>
         <form action="edit" method="POST">
 
-            <label for="product">Edit Product Name</label>
-            <input type="text" name="product" id="product" value="<%= product.product %>">
+            <div class="field">
+                <label for="product">Edit Product Name</label>
+                <input type="text" name="product" id="product" value="<%= product.product %>">
+            </div>
 
-            <label for="price">Price</label>
-            <input type="text" name="price" id="price" value="<%= product.price %>">
+            <div class="field">
+                <label for="price">Price</label>
+                <input type="text" name="price" id="price" value="<%= product.price %>">
+            </div>
 
-            <label for="description">Description</label>
-            <textarea name="description" id="description"><%= product.description %></textarea>
+            <div class="field">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"><%= product.description %></textarea>
+            </div>
 
             <button type="submit">Confirm</button>
 
         </form>
 
-        <a href="/brands/<%= brandid %>/products/<%= productid %>">Back to Product</a>
+        <div class="footer"><a href="/brands/<%= brandid %>/products/<%= productid %>">Back to Product</a></div>
     </body>
 </html>

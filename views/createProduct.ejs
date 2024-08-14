@@ -2,24 +2,123 @@
     <head>
         <title></title>
     </head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 0 8rem;
+        }
+
+        form {
+
+            width: 60%;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+        }
+
+        form button {
+
+            width: 8rem;
+            padding: 0.5rem 2rem;
+            border: 1px solid black;
+            background: none;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s;
+
+        }
+
+        form button:hover {
+
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.2);
+
+        }
+
+        form input {
+
+            width: 8rem;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+
+        }
+
+        form input:active {
+
+            border: 1px solid #ccc;
+
+        }
+
+        .product {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: rgba(0, 0, 0, 0.5);
+                transform: translate(0%, -100%);
+        }
+
+        .field {
+
+            width: 60%;
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+
+        }
+
+        a {
+
+            text-decoration: none;
+            color: black;
+            transition: opacity 0.3s;
+                
+        }
+
+        a:hover {
+        
+            opacity: 0.6;
+        
+        }
+    </style>
     <body>
         <h1>Joe's Fitness Supps</h1>
-        <h2>Add a product for <%= brand.brand %></h2>
+        
 
         <form action="products" method="POST">
 
-            <label for="product">New Product Name</label>
-            <input type="text" name="product" id="product">
+            <div class="product">
+                <p><%= brand.brand %></p>
+            </div>
 
-            <label for="price">Price</label>
-            <input type="number" name="price" id="price">
+            <div class="field">
+                <label for="product">New Product Name</label>
+                <input type="text" name="product" id="product">
+            </div>
 
-            <label for="description">Description</label>
-            <textarea name="description" id="description"></textarea>
+            <div class="field">
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price">
+            </div>
+
+            <div class="field">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
+            </div>
 
             <button type="submit">Add</button>
 
         </form>
+
+        <a href="/">Back</a>
 
     </body>
 </html>
